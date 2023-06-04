@@ -3,6 +3,7 @@
   font-size: 0.75rem;
   line-height: 0.875rem;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .nav:hover {
   color: yellow;
@@ -37,7 +38,7 @@ button {
 }
 span {
   display: block;
-  padding: 25px 80px;
+  padding: 20px 30px;
 }
 button::before,
 button::after {

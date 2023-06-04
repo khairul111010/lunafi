@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
-const Nav = () => {
+const Nav = ({ navheight, setNavheight }) => {
+  const handleNavbar = () => {
+    window.scrollY > 10 ? setNavheight("py-2") : setNavheight("py-8");
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleNavbar);
+    return () => {
+      window.removeEventListener("scroll", handleNavbar);
+    };
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 w-full bg-black/[.7] px-8 py-8 flex items-center justify-between">
+    <div
+      className={`z-50 fixed top-0 left-0 w-full bg-black px-8 ${navheight} flex items-center justify-between transition-all ease-in-out duration-700`}
+    >
       <div className="cursor-pointer">
         <div>
           <h1 className="text-white font-bold text-lg">Benefit</h1>
